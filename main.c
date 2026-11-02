@@ -39,9 +39,9 @@ int main (int argc, char * argv[]){
 
   char * flags[NUM_FLAGS] = {
     "--debug", //debug
-    "--dir", //directory exclusive
-    "-dirr", //directory recursive
-    "--file", //file only
+    "--dir", //directory scan exclusive
+    "-dirr", //directory scan recursive
+    "--file", //single file
     "--quick" //skip all confirm messages/checks
   };
 
@@ -95,9 +95,10 @@ int main (int argc, char * argv[]){
   int flagArray[NUM_FLAGS] = {0};
   flaghandler(flagArray, argc, argv, flags, NUM_FLAGS);
 
-  if (flagArray[0] == 1){
+  //DEBUG PRINTOUT
+  if (flagArray[0] == 1){ 
     printf("DEBUG Flagarray: ");
-    for (size_t i = 0; i < NUM_FLAGS; i++) { //debug
+    for (size_t i = 0; i < NUM_FLAGS; i++) {
       printf("%d ", flagArray[i]);
     }
     printf("\n");
