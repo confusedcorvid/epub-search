@@ -13,9 +13,9 @@ This is intended to be a quick and easy tool to be run in command line to batch 
     - Paranoid should stop process the second an error occurs, output an error log and exit.
     - Safe should skip files that produce an error, output error to terminal and continue. Once finished output error log.
     - Unsafe should ignore all errors and finish process. Once finished output error log.
-- Single search:
+- Single search: Searches a given filename and returns all hits with a section of surrounding text + location + % of the way through file.
   - Add 'display x number of hits', sorta akin to --head.
-- Filetype detection: detect filetype from suffix and match it/confirm it with its header
+- Filetype detection: detect filetype from suffix. Types of files planned: .md, .txt, .rtf, .docx, .pdf, .epub, .mobi. Further may be added.
+  - Match/confirm suffix with its header
   - Handle each accordingly by type during batch search
-  + Types of files planned: .md, .txt, .rtf, .docx, .pdf, .epub, .mobi. Further may be added.
 -   
