@@ -1,6 +1,7 @@
 # epub-search
 
 ## General Idea
+This is intended to be a quick and easy tool to be run in command line to batch search and sort text files. No muss, no fuss, no app-based tagging that goes away when the app does.
 
 ## Intended features
 - Batch search: Lists all files in given directory with matches in specified text (title, author, body text).
