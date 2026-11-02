@@ -21,3 +21,4 @@ This is intended to be a quick and easy tool to be run in command line to batch 
   - Match/confirm suffix with its header
   - Handle each accordingly by type during batch search
 - Batch move/delete/rename: Once searched perform X action on all hits.
+- Quick Mode: skips all confirmation messages.
