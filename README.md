@@ -1,8 +1,8 @@
 # epub-search
 
-#General Idea
+## General Idea
 
-#Intended features
+## Intended features
 - Batch search: Lists all files in given directory with matches in specified text (title, author, body text).
   - Sort by # of hits
 - Single search:
