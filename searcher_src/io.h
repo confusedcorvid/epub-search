@@ -1,3 +1,5 @@
+#include <search.h>
+
 #ifndef IO_H
 	#define IO_H
 	
@@ -48,9 +50,10 @@
 		// argument handling
 		void parse_args(char** args, char** targets, char** fields, int** modes);
 		char** next_token(char** arg_pointer);
+		
 		// printing output
 		void print_note(char* msg);
 		void print_error(char* msg);
-		void print_hits(char** filenames, int* num_hits, char*** hits, int** certainties);
+		void print_hits(char** filenames, int* num_hits, struct hit* hits);
 		
 	#endif
