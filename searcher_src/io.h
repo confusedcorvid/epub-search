@@ -47,4 +47,7 @@
 		void print_error(char* msg);
 		void print_hits(struct file_hits* hits);
 		
+		// logfile 
+		void print_to_log(char* msg);
+		
 	#endif
