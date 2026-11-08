@@ -11,6 +11,8 @@ You will be asked if you want to support the browser interface.
 - default is `yes`, which will download/install more stuff into a `.env` file
 - `no` will not create the `.env` and will delete the browser-interface related code in the directory
 
+<br> 
+
 ### To use
 
 #### CLI
