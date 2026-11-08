@@ -136,7 +136,7 @@ Should nothing go wrong with the execution of this tool, the following would hap
 |           |-----------app.py
 |           |-----------requirements.txt
 |           |-----------templates
-|                      |-----------searcher.html
+|                       |-----------searcher.html
 ...
 (rest of directory not shown, see above)
 ```
