@@ -1,4 +1,4 @@
-#include <search.h>
+#include "search.h"
 
 #ifndef IO_H
 	#define IO_H
@@ -38,11 +38,11 @@
 			#define EXACT 5
 		
 		// argument handling
-		void parse_args(char** args, char** targets);
-		char** next_token(char** arg_pointer);
+		struct query* parse_args(char** args, int argc);
+		char* next_token(char** args_ptr, int* cur_ind, int argc);
 		
 		// printing output
-		void print_note(char* msg);
+		void print_warning(char* msg);
 		void print_error(char* msg);
 		void print_hits(struct file_hits* hits);
 		
