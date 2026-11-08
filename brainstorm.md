@@ -116,14 +116,13 @@ Should nothing go wrong with the execution of this tool, the following would hap
 |-----------README.md
 |-----------searcher
 |-----------searcher_src/
-|           |-----------code
-|           |           |-----------errors.c
-|           |           |-----------files.c
-|           |           |-----------helpers.c
-|           |           |-----------io.c
-|           |           |-----------main.c
-|           |           |-----------search.c
+|           |-----------errors.c
+|           |-----------files.c
+|           |-----------helpers.c
+|           |-----------io.c
+|           |-----------main.c
 |           |-----------makefile
+|           |-----------search.c
 |-----------setup.sh
 (.h files not shown)
 ```
