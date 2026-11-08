@@ -1,0 +1,6 @@
+# don't commit test files
+test/*
+test*
+
+# for the future: python stuff
+__pycache__*
