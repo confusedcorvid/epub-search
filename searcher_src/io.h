@@ -46,7 +46,11 @@
 		// indices for parsing args 
 		#define FLAG 0
 		#define ARG 1
-			
+		
+		// argument arrays (to be accessed globally)
+		const int* search_fields;
+		const int** search_modes;
+		
 		// argument handling
 		void parse_args(char** args, char** targets, char** fields, int** modes);
 		char** next_token(char** arg_pointer);
@@ -54,6 +58,6 @@
 		// printing output
 		void print_note(char* msg);
 		void print_error(char* msg);
-		void print_hits(char** filenames, int* num_hits, struct hit* hits);
+		void print_hits(struct file_hits* hits);
 		
 	#endif
