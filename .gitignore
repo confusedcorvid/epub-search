@@ -1,3 +1,7 @@
+# don't commit object files or executables
+*.o
+searcher
+
 # don't commit test files
 test/*
 test*
