@@ -18,12 +18,12 @@ You will be asked if you want to support the browser interface.
 #### CLI
 The following are all valid executions of this tool. See the Flags section for more details. Run from your `epub-search/searcher` directory.
 ```
-./searcher <flags> <args>				# general format--MUST include target and text to search for!
+./searcher <flags> <args>               # general format--MUST include target and text to search for!
 
-./searcher <target> <text>				# searches target file trying to match text
-./searcher -f <target> -c <text>		# also searches target file trying to match text
-./searcher -d <target> -c <text>		# searches target directory trying to match text
-./searcher -r <target> -c <text>		# recursively searches target directory trying to match text
+./searcher <target> <text>              # searches target file trying to match text
+./searcher -f <target> -c <text>        # also searches target file trying to match text
+./searcher -d <target> -c <text>        # searches target directory trying to match text
+./searcher -r <target> -c <text>        # recursively searches target directory trying to match text
 ```
 
 #### Browser
