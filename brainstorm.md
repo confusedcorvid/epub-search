@@ -116,14 +116,14 @@ Should nothing go wrong with the execution of this tool, the following would hap
 |-----------README.md
 |-----------searcher
 |-----------searcher_src/
-|			|-----------code
-|			|			|-----------errors.c
-|			|			|-----------files.c
-|			|			|-----------helpers.c
-|			|			|-----------io.c
-|			|			|-----------main.c
-|			|			|-----------search.c
-|			|-----------makefile
+|           |-----------code
+|           |           |-----------errors.c
+|           |           |-----------files.c
+|           |           |-----------helpers.c
+|           |           |-----------io.c
+|           |           |-----------main.c
+|           |           |-----------search.c
+|           |-----------makefile
 |-----------setup.sh
 (.h files not shown)
 ```
@@ -132,11 +132,11 @@ Should nothing go wrong with the execution of this tool, the following would hap
 ```
 ...
 |-----------app/
-|			|-----------.venv
-|			|-----------app.py
-|			|-----------requirements.txt
-|			|-----------templates
-|						|-----------searcher.html
+|           |-----------.venv
+|           |-----------app.py
+|           |-----------requirements.txt
+|           |-----------templates
+|                      |-----------searcher.html
 ...
 (rest of directory not shown, see above)
 ```
