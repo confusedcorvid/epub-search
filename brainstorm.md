@@ -53,14 +53,14 @@ Simple to use, but capable of more complicated things if you check the flags.
 
 #### Search Modes
 The following can be specified by the user to configure the tool's behavior. (See also: the Flags section)
-| Mode                                | Default     | Options                                                                       |
+| Specification                       | Default     | Options                                                                       |
 |-------------------------------------|-------------|-------------------------------------------------------------------------------|
 | search target                       |             | single file, batch (directory of files), recursive batch (directory of files) |
 | search field                        | all content | title, author, all content                                                    |
 | error handling/caution level        | safe        | unsafe, safe, paranoid                                                        |
 | verbosity                           | standard    | quiet, standard, verbose                                                      |
 | handle temporary uncompressed files | delete all  | keep all, keep hits, delete all                                               |
-| modify original file                |             | move hits, rename hits, delete hits                                           |
+| (optional) modify original file     |             | move hits, rename hits, delete hits                                           |
 
 #### Actions: Correct Execution 
 Should nothing go wrong with the execution of this tool, the following would happen:
@@ -107,12 +107,39 @@ Should nothing go wrong with the execution of this tool, the following would hap
 - we will likely need something here for the web interface (phase two)
 
 
-# TECH STACK & DESIGN
+
+# DIRECTORY STRUCTURE
 
 ## Core/Commandline
+```
+.
+|-----------README.md
+|-----------searcher
+|-----------searcher_src/
+|			|-----------code
+|			|			|-----------errors.c
+|			|			|-----------files.c
+|			|			|-----------helpers.c
+|			|			|-----------io.c
+|			|			|-----------main.c
+|			|			|-----------search.c
+|			|-----------makefile
+|-----------setup.sh
+(.h files not shown)
+```
 
-## Browser Interface (Stretch Feature)
-
+## Browser Interface 
+```
+...
+|-----------app/
+|			|-----------.venv
+|			|-----------app.py
+|			|-----------requirements.txt
+|			|-----------templates
+|						|-----------searcher.html
+...
+(rest of directory not shown, see above)
+```
 
 
 # PLANNED PHASES
