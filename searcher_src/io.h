@@ -10,14 +10,8 @@
 		#define _YELLOW_ \033[93;1m
 		#define _CYAN_ \033[96;1m
 		
-		// indices for fields array
-		#define NUM_FIELDS 5
-		#define TITLE 0
-		#define AUTHOR 1
-		#define CONTENT 2
-		#define TAGS 3
-		#define EXTENSION 4
-		
+		// argument array (to be accessed globally)
+		const int** search_modes;
 		// indices for modes array 
 		#define NUM_MODES 5
 		#define VERBOSITY 0
@@ -43,16 +37,8 @@
 			#define HIGH 4
 			#define EXACT 5
 		
-		// indices for parsing args 
-		#define FLAG 0
-		#define ARG 1
-		
-		// argument arrays (to be accessed globally)
-		const int* search_fields;
-		const int** search_modes;
-		
 		// argument handling
-		void parse_args(char** args, char** targets, char** fields, int** modes);
+		void parse_args(char** args, char** targets);
 		char** next_token(char** arg_pointer);
 		
 		// printing output
