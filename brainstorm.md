@@ -1,14 +1,80 @@
-# LIST OF FEATURES
-*Note: The following features are listed as though we will complete Phase 2, including the stretch goals. For what is currently implemented, please see the PLANNED PHASES AND FEATURES section.*
+# Setup/Use
+
+### Main Setup
+Open your terminal. Navigate to whichever directory you'd like this tool to be in and run the following commands: 
+```
+git clone git@github.com:confusedcorvid/epub-search.git
+cd epub-search
+. setup.sh
+```
+You will be asked if you want to support the browser interface.
+- default is `yes`, which will download/install more stuff into a `.env` file
+- `no` will not create the `.env` and will delete the browser-interface related code in the directory
+
+### To use
+
+#### CLI
+The following are all valid executions of this tool. See the Flags section for more details. Run from your `epub-search/searcher` directory.
+```
+./searcher <flags> <args>				# general format--MUST include target and text to search for!
+
+./searcher <target> <text>				# searches target file trying to match text
+./searcher -f <target> -c <text>		# also searches target file trying to match text
+./searcher -d <target> -c <text>		# searches target directory trying to match text
+./searcher -r <target> -c <text>		# recursively searches target directory trying to match text
+```
+
+#### Browser
+Run the following from your `epub-search/app` directory.
+```
+# LINUX/MACOS
+. .venv/bin/activate
+
+# WINDOWS/WSL
+. .venv/scripts/activate 
+
+python app.py
+```
+To use the app, open your browser and search for `localhost:5000`. <br>
+To quit the app, go back to the terminal running the program and hit `Ctrl-C`. 
+
+
+
+# FEATURES
+*Note: The following features are listed as though we will complete Phase 2, including the stretch goals. For what is currently implemented, please see the PLANNED PHASES section.*
 
 ## Overview
 
+#### Description
+A tool that can search various filetypes (notably, `.epub` and `.zip`) in a less inconvenient way than grep. <br>
+Simple to use, but capable of more complicated things if you check the flags.
+
+#### Search Modes
+The following can be specified by the user to configure the tool's behavior. (See also: the Flags section)
 - VERBOSITY: quick, standard (default), verbose
 - ERROR RESPONSE: unsafe, safe (default), paranoid
 - DELETE UNZIPPED: delete all (default), save hits, keep all
 - SEARCH TARGET: single, batch, recursive (no default: must specify)
 - SEARCH FIELD: all (default), title, author, content
 - MODIFY: none (default), move, rename, delete
+
+#### Actions: Correct Execution 
+Should nothing go wrong with the execution of this tool, the following would happen:
+- if the user's file is a supported compressed filetype, it will be copied and uncompressed into a temporary directory
+- the script will run whatever search the user specified
+- output will be displayed
+- if the user selected to extract files, that will be done
+- if the user selected to modify the original file, that will be done 
+- if the user's file was compressed, the uncompressed copy will be deleted unless you specified otherwise
+
+#### Browser Interface
+- flask app that runs on localhost
+- the app is solely concerned with the browser interface; on the backend, it re-uses the main script
+- users can drag & drop a target file
+- there are switches & input forms as necessary for the flags
+- outputs and errors are displayed
+- users can download the files they extracted/modified if they so wish
+
 
 ## Flags
 | Short | Long          | Arguments                                 | Functionality                                                            |
@@ -33,18 +99,19 @@
 |       | `--delete`    |                                           | delete files with a hit, modify original file                            |
 
 # DEPENDENCIES
-- We will likely need something here for fuzzy string matching (phase one).
-- We will likely need something here for the web interface (phase two).
+- we will likely need something here for fuzzy string matching (phase one)
+- we will likely need something here for the web interface (phase two)
 
 
 # TECH STACK & DESIGN
 
 ## Core/Commandline
 
-## Web (Stretch Feature)
+## Browser Interface (Stretch Feature)
 
 
-# PLANNED PHASES AND FEATURES
+
+# PLANNED PHASES
 
 *Complete:*
 
@@ -54,11 +121,11 @@
 ## PHASE 0
 
 ### Summary: Generic EPUB Searching
-- Add a flag parser that recognizes most of the generic flags we need to search the `.epub` well.
-- Check the target's filetype by looking at the extension. `.epub` support only (for this phase).
-- Support single search, batch search, and recursive batch search (as outline above).
-- Let the user control what happens to the extracted files: keep hits, keep all, or delete all by default.
-- Add an error handler to handle generic/predictable errors.
+- add a flag parser that recognizes most of the generic flags we need to search the `.epub` well
+- check the target's filetype by looking at the extension. `.epub` support only (for this phase)
+- support single search, batch search, and recursive batch search (as outline above)
+- let the user control what happens to the extracted files: keep hits, keep all, or delete all by default
+- add an error handler to handle generic/predictable errors
 
 ### Table of Features:
 | Change | Feature            | Functionality                                                                                                                                                                                                                                                                                                                                             | Status      |
@@ -78,14 +145,14 @@
 ## PHASE 1
 
 ### Summary: Improved Search Features
-- Support more filetypes (specifics in table). 
-- Verify a file's type by checking both the extension AND the file header.
-- Use fuzzy string matching for search, rate results based on likelyhood.
-- Add flag to determine how "fuzzy" matches can be before they are not displayed in the output.
-- Add flag to limit targets to files with a specific extension.
-- Add flags to specify how files containing hits might be extracted and moved, extracted and renamed, or deleted, updating the original file in the process.
-- Update error checking to check for errors associated with creating, modifying, and deleting files.
-- Allow users to combine text matches for certain fields (title, author, content, filetype, file, directory) with logical operators (&, \| (precedence), ~, ()).
+- support more filetypes (specifics in table)
+- verify a file's type by checking both the extension AND the file header
+- use fuzzy string matching for search, rate results based on likelyhood
+- add flag to determine how "fuzzy" matches can be before they are not displayed in the output
+- add flag to limit targets to files with a specific extension
+- add flags to specify how files containing hits might be extracted and moved, extracted and renamed, or deleted, updating the original file in the process
+- update error checking to check for errors associated with creating, modifying, and deleting files
+- allow users to combine text matches for certain fields (title, author, content, filetype, file, directory) with logical operators (&, \| (precedence), ~, ())
 
 ### Table of Features:
 | Change  | Feature            | Functionality                                                                                                                                                                                                                                                                                                                                                                                                                 										| Status      |
@@ -104,13 +171,13 @@
 ## PHASE 2
 
 ### Summary: Web Integration & Other Stretch Goals
-- Make a whole Flask app to do All Of The Above, But From The Browser This Time.
-- This will run on localhost.
-- Allow users to drag & drop a target file.
-- Provide switches & input forms as necessary for the flags.
-- Display both outputs and errors on the website.
-- Offer the user the option to download the extracted files and/or just the files with hits.
-- If the user chose and option that modified the target file, give the option to download the modified file.
+- make a whole Flask app to do All Of The Above, But From The Browser This Time
+- this will run on localhost
+- allow users to drag & drop a target file
+- provide switches & input forms as necessary for the flags
+- display both outputs and errors on the website
+- offer the user the option to download the extracted files and/or just the files with hits
+- if the user chose and option that modified the target file, give the option to download the modified file
 
 ### Table of Features:
 | Change | Feature              | Functionality                                                                                                                                                                                                                                                                                                                                                                                                               										| Status      |
