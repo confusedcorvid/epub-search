@@ -2,6 +2,13 @@
 
 ## Overview
 
+- VERBOSITY: quick, standard (default), verbose
+- ERROR RESPONSE: unsafe, safe (default), paranoid
+- DELETE UNZIPPED: delete all (default), save hits, keep all
+- SEARCH TARGET: single, batch, recursive (no default: must specify)
+- SEARCH FIELD: all (default), title, author, content
+- MODIFY: none (default), move, rename, delete
+
 ## Flags
 
 
@@ -25,7 +32,6 @@
 | Change | Feature            | Functionality                                                                                                                                                                                                                                                                                                                                                       	|
 |--------|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | NEW    | Argument Parsing   | - parse all flags <br> - flag order does not matter <br> - exit with error if flags unrecognized																																																																		|
-| NEW    | Modes              | - VERBOSITY: quick, standard (default), verbose <br> - ERROR RESPONSE: unsafe, safe (default), paranoid <br> - DELETE UNZIPPED: delete all (default), save hits, keep all <br> - SEARCH TARGET: single, batch, recursive (no default: must specify) <br> - SEARCH FIELD: all (default), title, author, content <br> - MODIFY: none (default), move, rename, delete 		|
 | NEW    | Flags              | - -q, --quick <br> - -v, --verbose <br> - -u, --unsafe <br> - -p, --paranoid <br> - -s, --save <br> - -k, --keep <br> - -f, --file {file} <br> - -d, --dir {directory} <br> - -r, --dirr {directory} <br> - -t, --title {text} <br> - -a, --author {text} <br> - -c, --content {text} <br> - --move {location} <br> - --rename {reg_exp} <br> - --delete				|
 | NEW    | Filetype Detection | - checks file extension                                                                                                                                                                                                                                                                                                                                             	|
 | NEW    | Supported Files    | - .epub																																																																																									|
