@@ -12,6 +12,20 @@
 search_modes = (const int**) calloc(NUM_MODES, sizeof(int*));
 
 
+/* 	SET_DEFAULTS
+	function: 		modify search_modes array to contain default values
+	@args: 			none
+	@return: 		none
+*/
+void set_defaults() {
+	search_modes[VERBOSITY] = STANDARD;
+	search_modes[ERROR_HANDLING] = SAFE;
+	search_modes[EXTRACTED_FILES] = DELETE;
+	search_modes[FUZZY_ACCURACY] = HIGH;
+	// SEARCH_TYPE will be inferred, if not explicitly specified, from args
+}
+
+
 /* 	PARSE_ARGS
 	function: 		main function to facilitate validating and parsing arguments, set search_modes array
 	@args: 			char** args: pointer to args array

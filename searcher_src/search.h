@@ -4,16 +4,16 @@
 		// struct returned for each text query
 		struct query {
 			char* filepath;
+			char* extension;
 			char* text;
 			int* search_fields;
 		}
 		// indices for search_fields array
-		#define NUM_FIELDS 5
+		#define NUM_FIELDS 4
 		#define TITLE 0
 		#define AUTHOR 1
 		#define CONTENT 2
 		#define TAGS 3
-		#define EXTENSION 4
 		
 		struct hit {
 			char* field;

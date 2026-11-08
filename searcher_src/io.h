@@ -38,6 +38,7 @@
 			#define EXACT 5
 		
 		// argument handling
+		void set_defaults();
 		struct query* parse_args(char** args, int argc);
 		char* next_token(char** args_ptr, int* cur_ind, int argc);
 		
